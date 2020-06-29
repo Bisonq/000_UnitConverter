@@ -1,36 +1,34 @@
 package converters;
 
+import converters.units.Decagram;
+import converters.units.Gram;
+import converters.units.Kilogram;
+import converters.units.Ton;
+
 public class WeightConverter {
 
-    private double value;
-    private WeightUnits typeOfWeightUnit;
+    private static WeightConverter weightConverter;
 
-    public WeightConverter(double value, WeightUnits typeOfWeightUnit){
-        this.value = value;
-        this.typeOfWeightUnit = typeOfWeightUnit;
+    private WeightConverter(){
+
     }
 
-    public void buildTableOfWeights(){
-        if (typeOfWeightUnit.getSymbol().equals("g")){
-            System.out.println(printTableOfWeights(value, value * 0.1, value * 0.001, value * 0.000001));
-        }
-        else if(typeOfWeightUnit.getSymbol().equals("dag")){
-            System.out.println(printTableOfWeights(value * 10, value, value * 0.01, value * 0.00001));
-        }
-        else if(typeOfWeightUnit.getSymbol().equals("kg")){
-            System.out.println(printTableOfWeights(value * 1000, value * 100, value, value * 0.001));
-        }
-        else if (typeOfWeightUnit.getSymbol().equals("t")){
-            System.out.println(printTableOfWeights(value * 1000000, value * 100000, value * 1000, value));
-        }
+    public static WeightConverter getWeightConverter(){
+        if(weightConverter == null)
+            weightConverter = new WeightConverter();
+        return weightConverter;
     }
 
-    private String printTableOfWeights(double gram, double decagram, double kilogram, double ton){
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Gram: ").append(gram).append("\n");
-        stringBuilder.append("Decagram: ").append(decagram).append("\n");
-        stringBuilder.append("Kilogram: ").append(kilogram).append("\n");
-        stringBuilder.append("Tom: ").append(ton).append("\n");
-        return stringBuilder.toString();
+    public void buildTableOfWeights(double value, WeightUnits typeOfWeightUnit){
+        Gram gram = new Gram();
+        Decagram decagram = new Decagram();
+        Kilogram kilogram = new Kilogram();
+        Ton ton = new Ton();
+
+        gram.setHigherUnitInChain(decagram);
+        decagram.setHigherUnitInChain(kilogram);
+        kilogram.setHigherUnitInChain(ton);
+
+        gram.processRequest(value, typeOfWeightUnit);
     }
 }
