@@ -1,8 +1,6 @@
-package converters.units;
+package converters.weight;
 
-import converters.WeightUnits;
-
-public class Gram extends Unit{
+class Gram extends Unit{
 
     @Override
     public void processRequest(double value, WeightUnits typeOfWeightUnit) {

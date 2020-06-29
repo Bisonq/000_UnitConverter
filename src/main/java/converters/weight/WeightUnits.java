@@ -1,4 +1,4 @@
-package converters;
+package converters.weight;
 
 public enum WeightUnits {
     GRAM("g"), DECAGRAM("dag"), KILOGRAM("kg"), TON("t");

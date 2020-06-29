@@ -1,9 +1,4 @@
-package converters;
-
-import converters.units.Decagram;
-import converters.units.Gram;
-import converters.units.Kilogram;
-import converters.units.Ton;
+package converters.weight;
 
 public class WeightConverter {
 

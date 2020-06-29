@@ -1,8 +1,6 @@
-package converters.units;
+package converters.weight;
 
-import converters.WeightUnits;
-
-public class Ton extends Unit{
+class Ton extends Unit{
 
     @Override
     public void processRequest(double value, WeightUnits typeOfWeightUnit) {

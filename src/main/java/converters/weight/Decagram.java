@@ -1,8 +1,6 @@
-package converters.units;
+package converters.weight;
 
-import converters.WeightUnits;
-
-public class Decagram extends Unit{
+class Decagram extends Unit{
 
     @Override
     public void processRequest(double value, WeightUnits typeOfWeightUnit) {

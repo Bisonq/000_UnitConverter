@@ -1,6 +1,4 @@
-package converters.units;
-
-import converters.WeightUnits;
+package converters.weight;
 
 abstract class Unit {
     private Unit nextUnitInChain;
