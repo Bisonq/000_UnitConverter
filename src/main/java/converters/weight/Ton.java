@@ -9,6 +9,6 @@ class Ton extends Unit{
         if(typeOfWeightUnit.getSymbol().equals("t"))
             System.out.println(super.printTableOfWeights(value * 1000000, value * 100000, value * 1000, value));
         else
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("End of the chain");
     }
 }
