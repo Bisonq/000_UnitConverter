@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class WeightConverterTest {
 
     @Test
-    @DisplayName("WeightConventer Should have benn singleton")
+    @DisplayName("WeightConverter Should have benn singleton")
     void test1(){
         //given
         WeightConverter weightConverter1 = WeightConverter.getWeightConverter();

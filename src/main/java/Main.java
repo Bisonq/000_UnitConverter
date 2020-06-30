@@ -10,6 +10,6 @@ public class Main {
         weightConverter.buildTableOfWeights(10, WeightUnits.KILOGRAM);
 
         LengthConverter lengthConverter = LengthConverter.getLengthConverter();
-        lengthConverter.buildTableOfLengths(10, LengthUnits.DECIMETER);
+        lengthConverter.buildTableOfLengths(10, LengthUnits.KILOMETER);
     }
 }
